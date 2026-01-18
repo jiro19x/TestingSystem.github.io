@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LABGUARD - Gordon College</title>
+  <link rel="icon" href="./assets/icons/logo-image.png" type="image/png">
+  <link rel="stylesheet" href="./css/login.css"/>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+
+<body>
+  <div class="container">
+    <div class="left-panel">
+      <div class="circle circle-1"></div>
+      <div class="circle circle-2"></div>
+      <div class="circle circle-3"></div>
+      <div class="circle circle-4"></div>
+
+      <div class="logo-container">
+        <img src="./assets/img/CCS-CCSLOGO.png" alt="Gordon College Logo" class="logo">
+      </div>
+
+      <div class="college-name">
+        <h1>GORDON COLLEGE</h1>
+        <p>Management Information Unit - MIS Unit</p>
+      </div>
+
+      <div class="app-name">
+        <h2>LABGUARD</h2>
+      </div>
+    </div>
+
+    <div class="right-panel">
+      <div class="login-form">
+        <h2>Welcome Back</h2>
+        <p>Please sign in to continue</p>
+
+        <form id="login-form">
+          <div class="form-group">
+            <label for="login-email">Email</label>
+            <div class="input-with-icon">
+              <i class='bx bx-envelope'></i>
+              <input type="email" id="login-email" name="email" placeholder=" example@gmail.com" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="login-password">Password</label>
+            <div class="input-with-icon">
+              <i class='bx bx-lock-alt'></i>
+              <input type="password" id="login-password" name="password" placeholder=" ••••" required>
+              <i class='bx bx-hide toggle-password' id="togglePassword"></i>
+            </div>
+          </div>
+
+          <div id="error-message" class="error-message" style="display:none;">
+            <i class='bx bx-error-circle'></i>
+            <span>Invalid email or password. Please try again.</span>
+          </div>
+
+          <button type="submit" class="sign-in-btn">SIGN IN</button>
+        </form>
+
+        <div class="input">
+          <button id="google-login-btn" class="google-button">
+            <i class="fab fa-google"></i> Login with Google
+          </button>
+        </div>
+
+        <div class="account-help">
+          <a href="signup.html">Need an account?</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Google login handler -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="./js/firebase-config.js"></script> 
+    <script src="./js/auth.js"></script>
+    <script src="./js/role-based-routing.js"></script>
+    <script src="./js/togglepassword.js"></script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LABGUARD - Gordon College | Register</title>
+  <link rel="stylesheet" href="./css/login.css" />
+    <link rel="icon" href="./assets/icons/logo-image.png" type="image/png">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <style>
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 128, 0, 0.2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    .modal.hidden {
+      display: none;
+    }
+
+    .modal-content {
+      background-color: #e6ffed;
+      color: #155724;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      max-width: 400px;
+      width: 90%;
+    }
+
+    .modal-icon {
+      font-size: 2rem;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .modal-text {
+      margin-bottom: 20px;
+    }
+
+    .modal-close {
+      padding: 8px 20px;
+      background-color: #28a745;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      cursor: pointer;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Left Panel -->
+    <div class="left-panel">
+      <div class="circle circle-1"></div>
+      <div class="circle circle-2"></div>
+      <div class="circle circle-3"></div>
+      <div class="circle circle-4"></div>
+      <div class="logo-container">
+        <img src="./assets/img/CCS-CCSLOGO.png" alt="Gordon College Logo" class="logo" />
+      </div>
+      <div class="college-name">
+        <h1>GORDON COLLEGE</h1>
+        <p>Management Information Unit - MIS Unit</p>
+      </div>
+      <div class="app-name">
+        <h2>LABGUARD</h2>
+      </div>
+    </div>
+
+    <!-- Right Panel - Registration Form -->
+    <div class="right-panel">
+      <div class="login-form">
+        <h2>Welcome New User</h2>
+        <p>Please sign up to continue</p>
+
+        <form id="signup-form">
+          <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <div class="input-with-icon">
+              <i class="bx bx-user"></i>
+              <input type="text" id="fullName" name="fullName" placeholder="John Doe" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="signup-email">Email</label>
+            <div class="input-with-icon">
+              <i class="bx bx-envelope"></i>
+              <input type="email" id="signup-email" name="signup-email" placeholder="example@gmail.com" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="signup-password">Password</label>
+            <div class="input-with-icon">
+              <i class="bx bx-lock-alt"></i>
+              <input type="password" id="signup-password" name="signup-password" placeholder="••••" required />
+              <i class="bx bx-hide toggle-password" id="togglePassword"></i>
+            </div>
+          </div>
+
+          <div id="error-message" class="error-message" style="display: none;">
+            <i class="bx bx-error-circle"></i>
+            <span></span>
+          </div>
+
+          <button type="submit" class="sign-in-btn">SIGN UP</button>
+        </form>
+
+        <div class="account-help">
+          <p>Already have an account? <a href="index.html">Log in here</a>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="./js/firebase-config.js"></script>
+    <script src="./js/auth.js"></script>
+    <script src="./js/role-based-routing.js"></script>
+    <script src="./js/togglepassword.js"></script>
+</body>
+</html>
